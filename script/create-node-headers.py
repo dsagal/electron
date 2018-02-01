@@ -21,6 +21,7 @@ HEADERS_SUFFIX = [
 HEADERS_DIRS = [
   'src',
   'deps/http_parser',
+  'deps/openssl',
   'deps/zlib',
   'deps/uv',
   'deps/npm',
