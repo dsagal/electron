@@ -136,6 +136,17 @@ void WebContentsPreferences::AppendExtraCommandLineSwitches(
       LOG(ERROR) << "preload url must be file:// protocol.";
   }
 
+  // Custom args for renderer process
+  base::ListValue* customArgs;
+  std::string customArg;
+  if (web_preferences.GetList(options::kCustomArgs, &customArgs)) {
+    for (size_t i = 0; i < customArgs->GetSize(); i++) {
+      if (customArgs->GetString(i, &customArg)) {
+        command_line->AppendArg(customArg);
+      }
+    }
+  }
+
   // Run Electron APIs and preload script in isolated world
   bool isolated;
   if (web_preferences.GetBoolean(options::kContextIsolation, &isolated) &&
