@@ -2,7 +2,7 @@
 
 set -x
 
-VERSION=1.7.11
+VERSION=$(npm view ./ version)
 BUCKET=electron-headers-openssl
 export AWS_PROFILE=electron-headers-openssl
 
