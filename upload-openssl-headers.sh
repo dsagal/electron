@@ -4,6 +4,8 @@
 #
 # 1. Follow build instructions until bootstrap.py step.
 #    - When checking out code, check it out at a version tag, e.g v3.0.7
+#    - Clean out dist/ directory if there is stale stuff there
+#      rm -rf dist/
 # 2. build.py step is probably not necessary (or OK if it doesn't complete in full)
 # 3. From the electron/ checkout directory, run ./upload-openssl-headers.sh
 #    script with no arguments.
