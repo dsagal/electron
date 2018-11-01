@@ -11,7 +11,7 @@
 
 set -x
 
-VERSION=$(npm view ./ version)
+VERSION=$(node -p -e "require('./package.json').version")
 BUCKET=electron-headers-openssl
 export AWS_PROFILE=electron-headers-openssl
 
